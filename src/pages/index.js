@@ -4,10 +4,10 @@ import Footer from "../components/footer"
 const posts = [
   {
     title: 'Working with Gatsby and GitHub Pages',
-    href: '#',
-    category: { name: 'Article', href: '#' },
+    href: 'blog/working-with-gatsby-and-github-pages',
+    category: { name: 'Article', href: 'blog/working-with-gatsby-and-github-pages' },
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    imageUrl: 'images/apothecary-87-CVBQdww5JZU-unsplash.jpg',
+    imageUrl: '/images/apothecary-87-CVBQdww5JZU-unsplash.jpg',
     date: 'Aug 17, 2021',
     datetime: '2021-08-17'
   }
