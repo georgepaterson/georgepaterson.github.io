@@ -6,7 +6,7 @@ const posts = [
   {
     title: 'Working with Gatsby and GitHub Pages',
     href: 'blog/working-with-gatsby-and-github-pages',
-    category: { name: 'Article', href: 'blog/working-with-gatsby-and-github-pages' },
+    category: { name: 'Blog', href: 'blog/working-with-gatsby-and-github-pages' },
     description: 'Gatsby and GitHub pages can be a quick and effective way of developing a Website integrated with your existing source control, with minimal initial investment.',
     imageUrl: '/images/apothecary-87-CVBQdww5JZU-unsplash.jpg',
     date: 'Aug 17, 2021',
