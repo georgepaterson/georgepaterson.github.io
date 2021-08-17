@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    pathPrefix: "/georgepaterson.github.io",
+    siteUrl: "https://www.georgepaterson.com",
     title: "George Paterson",
   },
   plugins: [
