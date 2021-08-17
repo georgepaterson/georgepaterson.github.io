@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import Footer from "../../components/footer"
 
 const BlogPage = () => {
@@ -7,7 +8,7 @@ const BlogPage = () => {
       <header>
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
           <div class="text-center">
-            <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase">Blog</h2>
+            <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase"><Link to="/">Home</Link></h2>
             <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Writing for fun and productivity.</p>
             <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Code, science, stories, and all the interesting things in between.</p>
           </div>
@@ -35,43 +36,34 @@ const BlogPage = () => {
                   <time dateTime="2021-08-17">Aug 17, 2021</time>
                 </p>
                 <p className="mt-8 text-lg text-gray-500">
-                  Sagittis scelerisque nulla cursus in enim consectetur quam. Dictum urna sed consectetur neque tristique
-                  pellentesque. Blandit amet, sed aenean erat arcu morbi.
+                  Gatsby and GitHub pages can be a quick and effective way of developing a Website integrated 
+                  with your existing source control, with minimal initial investment.
                 </p>
                 <div className="mt-5 prose prose-indigo text-gray-500">
                   <p>
-                    Sollicitudin tristique eros erat odio sed vitae, consequat turpis elementum. Lorem nibh vel, eget
-                    pretium arcu vitae. Eros eu viverra donec ut volutpat donec laoreet quam urna.
+                    There are many different choices available for Website hosting, AWS and Google Cloud are cloud platforms I've used in the past for dynamic and static Web hosting 
+                    but if you're already on GitHub and want to get a site running or have a dedicated page for your repository, GitHub Pages is a viable choice.
                   </p>
                   <p>
-                    Bibendum eu nulla feugiat justo, elit adipiscing. Ut tristique sit nisi lorem pulvinar. Urna, laoreet
-                    fusce nibh leo. Dictum et et et sit. Faucibus sed non gravida lectus dignissim imperdiet a.
+                    GitHub Pages doesn't need a build framework to work, you could run a static site with simple a index.html file and if you want a custom domain
+                    a CNAME file with your domain, for instance the CNAME for this site would simple have georgepaterson.com in the file. 
                   </p>
                   <p>
-                    Dictum magnis risus phasellus vitae quam morbi. Quis lorem lorem arcu, metus, egestas netus cursus. In.
-                  </p>
-                  <ul>
-                    <li>Quis elit egestas venenatis mattis dignissim.</li>
-                    <li>Cras cras lobortis vitae vivamus ultricies facilisis tempus.</li>
-                    <li>Orci in sit morbi dignissim metus diam arcu pretium.</li>
-                  </ul>
-                  <p>
-                    Rhoncus nisl, libero egestas diam fermentum dui. At quis tincidunt vel ultricies. Vulputate aliquet
-                    velit faucibus semper. Pellentesque in venenatis vestibulum consectetur nibh id. In id ut tempus
-                    egestas. Enim sit aliquam nec, a. Morbi enim fermentum lacus in. Viverra.
-                  </p>
-                  <h3>How we’re different</h3>
-                  <p>
-                    Tincidunt integer commodo, cursus etiam aliquam neque, et. Consectetur pretium in volutpat, diam.
-                    Montes, magna cursus nulla feugiat dignissim id lobortis amet. Laoreet sem est phasellus eu proin massa,
-                    lectus. Diam rutrum posuere donec ultricies non morbi. Mi a platea auctor mi.
+                    A framework though does make it easier to manage your build assets and content.
+                    If you already develop with Ruby, GitHub works well with Jekyll. If you prefer JavaScript, there are a number of interesting frameworks you could use but in this article we'll reference Gatsby.
                   </p>
                   <p>
-                    Mauris ullamcorper imperdiet nec egestas mi quis quam ante vulputate. Vel faucibus adipiscing lacus,
-                    eget. Nunc fermentum id tellus donec. Ut metus odio sit sit varius non nunc orci. Eu, mi neque, ornare
-                    suspendisse amet, nibh. Facilisi volutpat lectus id sapien dis mauris rhoncus. Est rhoncus, interdum
-                    imperdiet ac eros, diam mauris, tortor. Risus id sit molestie magna.
+                    GitHub provides some excellent <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">documentation</a>, create your repository if you need to and then set up two branches,
+                    main for your Gatsby development and gh-pages that will render the site. Using the gh-pages branch you will need to set it as the <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">publishing source</a>. 
                   </p>
+                  <p>
+                    With the repository prepared you'll then want to initiate NPM, install Gatsby, and add the gh-page package to support deployment. 
+                    You'll then need to add a deploy script to package.json.
+                    <pre><code>"deploy": "gatsby build --prefix-paths && gh-pages -d public"</code></pre>
+                    This will allow you to write code in the main branch and when you're ready you can deploy to gh-pages. Gatsby have full documentation at <a href="https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/">How Gatsby Works with GitHub Pages</a>.
+                  </p>
+                  <p>The CNAME that I mentioned earlier, put that file in your static folder and it will deploy to the root of the gh-pages branch.</p>
+                  <p>This should give you a quick site to work with, there's more to explore with Gatsby and as the site gets more complex you could choose to move from GitHub pages and deploy to another host with minimal changes.</p>
                 </div>
               </div>
             </div>
