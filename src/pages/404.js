@@ -1,11 +1,8 @@
 import * as React from "react"
 import { Link } from "gatsby"
 
-
-// markup
 const NotFoundPage = () => {
   return (
-
     <div class="bg-white min-h-screen flex flex-col lg:relative">
       <div class="flex-grow flex flex-col">
         <main class="flex-grow flex flex-col bg-white">
