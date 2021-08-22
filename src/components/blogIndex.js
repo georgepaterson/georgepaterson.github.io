@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import Header from "./header"
 import Footer from "./footer"
 
-const BlogIndex = ({ pageTitle, children }) => {
+const BlogIndex = ({ children }) => {
   return (
     <div>
       <Header/>

@@ -1,0 +1,25 @@
+---
+title: "Working with Gatsby and GitHub Pages"
+date: "2021-08-17"
+description: "Gatsby and GitHub pages can be a quick and effective way of developing a Website integrated with your existing source control, with minimal initial investment."
+imageUrl: "/images/apothecary-87-CVBQdww5JZU-unsplash.jpg"
+fileUrl: "/blog/working-with-gatsby-and-github-pages/"
+---
+
+There are many different choices available for Website hosting, AWS and Google Cloud are cloud platforms I've used in the past for dynamic and static Web hosting but if you're already on GitHub and want to get a site running or have a dedicated page for your repository, GitHub Pages is a viable choice.
+
+GitHub Pages doesn't need a build framework to work, you could run a static site with simple a index.html file and if you want a custom domain a CNAME file with your domain, for instance the CNAME for this site would simple have georgepaterson.com in the file.
+
+A framework though does make it easier to manage your build assets and content. If you already develop with Ruby, GitHub works well with Jekyll. If you prefer JavaScript, there are a number of interesting frameworks you could use but in this article we'll reference Gatsby.
+
+GitHub provides some excellent [documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), create your repository if you need to and then set up two branches, main for your Gatsby development and gh-pages that will render the site. Using the gh-pages branch you will need to set it as the [publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+With the repository prepared you'll then want to initiate NPM, install Gatsby, and add the gh-page package to support deployment. You'll then need to add a deploy script to package.json.
+
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+
+This will allow you to write code in the main branch and when you're ready you can deploy to gh-pages. Gatsby have full documentation at [How Gatsby Works with GitHub Pages](https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/).
+
+The CNAME that I mentioned earlier, put that file in your static folder and it will deploy to the root of the gh-pages branch.
+
+This should give you a quick site to work with, there's more to explore with Gatsby and as the site gets more complex you could choose to move from GitHub pages and deploy to another host with minimal changes.
