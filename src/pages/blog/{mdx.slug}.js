@@ -1,16 +1,17 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import Layout from '../../components/layout'
+import BlogIndex from '../../components/blogIndex'
 
 const BlogPost = ({ data }) => {
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
+    <BlogIndex pageTitle={data.mdx.frontmatter.title}>
       <p>{data.mdx.frontmatter.date}</p>
+      <p>{data.mdx.frontmatter.description}</p>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
-    </Layout>
+    </BlogIndex>
   )
 }
 
@@ -20,6 +21,7 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM D, YYYY")
+        description
       }
       body
     }
